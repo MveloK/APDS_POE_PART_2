@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "O6AOCuQ/jp6FH1M85IjZFwdxLF7ByZ4KuCwJ2BmWZW8=",
+  "Source": "APDS7311_POE_PART2_ST10076452.Server",
+  "BasePath": "_content/APDS7311_POE_PART2_ST10076452.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\apds7311_poe_part2_st10076452.client\\apds7311_poe_part2_st10076452.client.esproj",
+      "Version": 2,
+      "Source": "apds7311_poe_part2_st10076452.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

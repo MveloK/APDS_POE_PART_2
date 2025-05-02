@@ -1,0 +1,6 @@
+@APDS7311_POE_PART2_ST10076452.Server_HostAddress = http://localhost:5179
+
+GET {{APDS7311_POE_PART2_ST10076452.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

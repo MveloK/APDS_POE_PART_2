@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:59737",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\..\\apds7311_poe_part2_st10076452.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

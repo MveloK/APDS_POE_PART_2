@@ -1,0 +1,1 @@
+C:\Users\User\source\repos\APDS7311_POE_PART2_ST10076452\apds7311_poe_part2_st10076452.client\obj\Debug\apds7311_poe_part2_st10076452.client.esproj.CoreCompileInputs.cache

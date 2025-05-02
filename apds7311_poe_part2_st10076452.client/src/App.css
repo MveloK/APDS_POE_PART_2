@@ -1,0 +1,147 @@
+﻿/* Overall Page Styling */
+body {
+    background: linear-gradient(to bottom, #6a7fd9, #4970e3); /* Ombre blue background */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333; /* Dark text for readability */
+}
+
+/* Root container to center everything */
+#root {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95); /* Light opacity white background */
+    border-radius: 12px; /* Soft corners for a smooth look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* General styling for headers and forms */
+h1, h2, h3 {
+    color: #333; /* Darker header text */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+/* Form Layout */
+.form-holder {
+    margin-top: 2rem;
+}
+
+/* Input fields and labels */
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333; /* Dark text for readability */
+}
+
+input[type="submit"] {
+    background-color: #4970e3; /* Matching blue for the submit button */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #6a7fd9;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Message Box */
+.message {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #ffdd57;
+    color: #333;
+    border-radius: 8px;
+    display: none;
+}
+
+/* Login/Register Page Styling */
+.page {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9); /* Slight white overlay to make content pop */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Register Page */
+.register-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Page */
+.login-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Navigation Bar */
+.top-nav {
+    background: linear-gradient(to right, #6a7fd9, #4970e3); /* Ombre blue background */
+    padding: 1rem 3rem; /* More padding for better spacing */
+    display: flex;
+    justify-content: space-between; /* Space out elements */
+    align-items: center;
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Links container */
+.item-holder {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Links and Logout text */
+.item-holder a,
+.item-holder span {
+    text-decoration: none;
+    color: #fff; /* White text */
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.item-holder a:hover,
+.item-holder span:hover {
+    color: #ffdd57; /* Soft golden highlight on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Optional: For the 'Log Out' or 'Home' icon or text */
+.item-holder span:last-child {
+    font-weight: 700; /* Make the logout text more prominent */
+}

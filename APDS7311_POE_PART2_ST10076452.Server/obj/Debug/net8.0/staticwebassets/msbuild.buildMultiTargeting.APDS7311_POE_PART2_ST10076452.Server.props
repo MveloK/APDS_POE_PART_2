@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\APDS7311_POE_PART2_ST10076452.Server.props" />
+</Project>
