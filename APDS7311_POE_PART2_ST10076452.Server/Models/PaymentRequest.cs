@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APDS7311_POE_PART2_ST10076452.Server.Models
 {
@@ -23,8 +24,10 @@ namespace APDS7311_POE_PART2_ST10076452.Server.Models
 
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
-        // Add this to associate with the logged-in user
-        public string UserId { get; set; }
+        [Required]
+        public string accNumber { get; set; }
+
+        [ForeignKey("accNumber")]
         public Users User { get; set; }
     }
 }

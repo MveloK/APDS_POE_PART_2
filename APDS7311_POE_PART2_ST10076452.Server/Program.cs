@@ -1,6 +1,4 @@
 using APDS7311_POE_PART2_ST10076452.Server.Data;
-using APDS7311_POE_PART2_ST10076452.Server.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,32 +19,12 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Configure DbContext with SQL Server connection string
+// Add DbContext without Identity
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+           .LogTo(Console.WriteLine, LogLevel.Information) // Logs SQL to console
+           .EnableSensitiveDataLogging() // Shows parameter values - for development only!
 );
-
-// Configure Identity with custom settings
-builder.Services.AddIdentity<Users, IdentityRole>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-    options.Password.RequireDigit = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequiredLength = 6;
-    options.Password.RequiredUniqueChars = 1;
-
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-    options.Lockout.MaxFailedAccessAttempts = 5;
-    options.Lockout.AllowedForNewUsers = true;
-
-    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._@+?#$";
-    options.User.RequireUniqueEmail = false; // Not enforcing unique emails (as per your setup)
-})
-.AddEntityFrameworkStores<ApplicationDbContext>()
-.AddDefaultTokenProviders();
-
-builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -63,8 +41,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication(); // Enable authentication
-app.UseAuthorization(); // Enable authorization
+
+app.UseAuthorization();
 
 app.MapControllers();
 app.MapFallbackToFile("/index.html");

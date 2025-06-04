@@ -1,52 +1,82 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
+import ProtectedEmployeeRoutes from './ProtectedEmployeeRoutes';
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
+import EmployeeLogin from './components/EmployeeLogin';
+import EmployeeDashboard from './components/EmployeeDashboard';
 
 function App() {
-  const isLogged = localStorage.getItem('users');
+  const role = localStorage.getItem('role');
+  const isLoggedIn = localStorage.getItem('user');
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('role');
+    window.location.href = '/login';
+  };
 
   return (
-    <section>
-      <div className="top-nav">
-        {isLogged ? (
-          <span className="item-holder">
-            <a href="/home">Home</a>
-            <span
-              onClick={() => {
-                localStorage.removeItem('users');
-                window.location.reload();  // Refresh the page after logging out
-              }}
-            >
-              Log Out
+    <Router>
+      <section>
+        <div className="top-nav">
+          {isLoggedIn ? (
+            <span className="item-holder">
+              {role === 'employee' ? (
+                <>
+                  <a href="/employee-dashboard">Dashboard</a>
+                  <span onClick={handleLogout} style={{ cursor: 'pointer', marginLeft: '1rem' }}>
+                    Log Out
+                  </span>
+                </>
+              ) : (
+                <>
+                  <a href="/home">Home</a>
+                  <span onClick={handleLogout} style={{ cursor: 'pointer', marginLeft: '1rem' }}>
+                    Log Out
+                  </span>
+                </>
+              )}
             </span>
-          </span>
-        ) : (
-          <span className="item-holder">
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-          </span>
-        )}
-      </div>
+          ) : (
+            <span className="item-holder">
+              <a href="/login">User Login</a>
+              <a href="/register">Register</a>
+              <a href="/employee-login">Employee Login</a>
+            </span>
+          )}
+        </div>
 
-      <Router>
         <Routes>
-          {/* Default route redirects to the registration page */}
-          <Route path="/" element={<Navigate to="/register" />} />
+          <Route
+            path="/"
+            element={
+              isLoggedIn ? (
+                role === 'employee' ? <Navigate to="/employee-dashboard" /> : <Navigate to="/home" />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
 
-          {/* Protected routes (e.g., the home page) */}
+          {/* Protected Routes */}
           <Route element={<ProtectedRoutes />}>
-            <Route path="home" element={<Home />} />
+            <Route path="/home" element={<Home />} />
           </Route>
 
-          {/* Public routes */}
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route element={<ProtectedEmployeeRoutes />}>
+            <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
+          </Route>
 
-          {/* Catch-all route for invalid URLs */}
+          {/* Public Routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/employee-login" element={<EmployeeLogin />} />
+
+          {/* 404 Fallback */}
           <Route
             path="*"
             element={
@@ -61,8 +91,8 @@ function App() {
             }
           />
         </Routes>
-      </Router>
-    </section>
+      </section>
+    </Router>
   );
 }
 

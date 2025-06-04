@@ -1,59 +1,66 @@
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Login() {
-  document.title = 'Login';
+  const [accNumber, setAccNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [isEmployee, setIsEmployee] = useState(false); // Track if logging in as employee
+  const [loading, setLoading] = useState(false);
 
-  // Check if the user is already logged in (based on localStorage)
   useEffect(() => {
-    const user = localStorage.getItem('user');
-    if (user) {
-      // If user is already logged in, redirect to home page
-      document.location = '/';
-    }
+    document.title = 'Login';
+    // Clear any old login info on page load
+    localStorage.removeItem('user');
+    localStorage.removeItem('role');
   }, []);
 
-  // Handle form submission and login process
   async function loginHandler(e) {
     e.preventDefault();
-    const form = e.target;
-    const submitter = document.querySelector('input.login');
-    const formData = new FormData(form, submitter);
-    const dataToSend = {};
+    setLoading(true);
+    setMessage('');
 
-    // Convert FormData to an object
-    for (const [key, value] of formData) {
-      dataToSend[key] = value;
-    }
+    const dataToSend = {
+      AccNumber: accNumber.trim(),
+      Password: password,
+    };
 
-    // Send login request to the backend
-    const response = await fetch('/api/SecureWebsite/login', {
-      method: 'POST',
-      credentials: 'include', // Include cookies if needed
-      body: JSON.stringify(dataToSend),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
+    const endpoint = isEmployee
+      ? '/api/SecureWebsite/employee-login'
+      : '/api/SecureWebsite/login';
 
-    const data = await response.json();
-    const messageEl = document.querySelector('.message');
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(dataToSend),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      });
 
-    if (response.ok) {
-      // If login is successful, save user to localStorage
-      localStorage.setItem('user', dataToSend.accNumber);
-      // Redirect to home page
-      document.location = '/';
-    } else {
-      // If login fails, show error message
-      if (data.message) {
-        messageEl.innerHTML = data.message;
-      } else {
-        messageEl.innerHTML = 'Something has gone wrong. Please try again.';
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        throw new Error('Invalid JSON from server');
       }
-    }
 
-    console.log('Login response:', data);
+      if (response.ok) {
+        localStorage.setItem('user', accNumber.trim());
+        localStorage.setItem('role', isEmployee ? 'employee' : 'customer');
+        window.location.href = isEmployee ? '/employee-dashboard' : '/home';
+      } else {
+        setMessage(data.message || 'Something went wrong. Please try again.');
+      }
+
+      console.log('Login response:', data);
+    } catch (error) {
+      setMessage('Network error. Please try again.');
+      console.error('Login error:', error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -62,17 +69,57 @@ function Login() {
         <header>
           <h1>Login Page</h1>
         </header>
-        <p className="message"></p> {/* Error or success messages */}
+        {message && <p className="message" style={{ display: 'block' }}>{message}</p>}
         <div className="form-holder">
           <form className="login" onSubmit={loginHandler}>
             <label htmlFor="accNumber">Account Number</label>
-            <input type="text" name="accNumber" id="accNumber" required />
+            <input
+              type="text"
+              name="AccNumber"
+              id="accNumber"
+              required
+              value={accNumber}
+              onChange={(e) => setAccNumber(e.target.value)}
+            />
 
-            <label htmlFor="Password">Password</label>
-            <input type="password" name="Password" id="Password" required />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="Password"
+              id="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <div style={{ marginTop: '10px' }}>
+              <label>
+                <input
+                  type="radio"
+                  name="userType"
+                  checked={!isEmployee}
+                  onChange={() => setIsEmployee(false)}
+                />
+                Customer
+              </label>
+              <label style={{ marginLeft: '15px' }}>
+                <input
+                  type="radio"
+                  name="userType"
+                  checked={isEmployee}
+                  onChange={() => setIsEmployee(true)}
+                />
+                Employee
+              </label>
+            </div>
 
             <br />
-            <input type="submit" value="Login" className="login btn" />
+            <input
+              type="submit"
+              value={loading ? 'Logging in...' : 'Login'}
+              className="login btn"
+              disabled={loading}
+            />
           </form>
         </div>
       </div>

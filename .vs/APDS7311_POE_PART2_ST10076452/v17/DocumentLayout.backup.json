@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\models\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604200920_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604200920_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\controllers\\securewebsitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,8 +19,36 @@
       "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\models\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604101526_FixLoginNavigation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604101526_FixLoginNavigation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604100806_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604100806_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\models\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|c:\\users\\user\\source\\repos\\apds7311_poe_part2_st10076452\\apds7311_poe_part2_st10076452.server\\models\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D7BBB26-3DA5-4A1A-9ED0-C2F639BF42FE}|APDS7311_POE_PART2_ST10076452.Server\\APDS7311_POE_PART2_ST10076452.Server.csproj|solutionrelative:apds7311_poe_part2_st10076452.server\\models\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +58,170 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAiwCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T18:34:33.201Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
-              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
-              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T20:03:38.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
-              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
-              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAcwEgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T20:19:58.546Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20250604200920_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604200920_InitialCreate.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604200920_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604200920_InitialCreate.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604200920_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T20:09:20.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PaymentRequest.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\PaymentRequest.cs",
               "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Models\\PaymentRequest.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\PaymentRequest.cs",
               "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Models\\PaymentRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T17:58:57.809Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "SecureWebsiteController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
+              "ViewState": "AgIAABUAAAAA8f////8jwJEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T18:41:33.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:03:38.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAADIAAAAUNjMzM7MpwD4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T18:34:33.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:19:58.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Users.cs",
               "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Users.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Users.cs",
               "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAACAZmZmZmYgwBoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T14:33:08.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SecureWebsiteController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
-              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
-              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Controllers\\SecureWebsiteController.cs",
-              "ViewState": "AgIAAF8AAAAALzMzMzMfwMMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\Employee.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T18:41:33.676Z",
+              "WhenOpened": "2025-06-03T23:24:04.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20250604101526_FixLoginNavigation.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604101526_FixLoginNavigation.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604101526_FixLoginNavigation.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604101526_FixLoginNavigation.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604101526_FixLoginNavigation.cs",
+              "ViewState": "AgIAABsAAABAX2ZmZmYswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T10:15:26.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\LoginUserDto.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Models\\LoginUserDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\LoginUserDto.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Models\\LoginUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T20:15:16.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20250604100806_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604100806_InitialCreate.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604100806_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604100806_InitialCreate.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Migrations\\20250604100806_InitialCreate.cs",
+              "ViewState": "AgIAACsAAAAA1v////8PwDYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T10:08:07.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "APDS7311_POE_PART2_ST10076452.Server\\Models\\RegisterUserDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\APDS7311_POE_PART2_ST10076452\\APDS7311_POE_PART2_ST10076452.Server\\Models\\RegisterUserDto.cs",
+              "RelativeToolTip": "APDS7311_POE_PART2_ST10076452.Server\\Models\\RegisterUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T20:12:34.166Z",
               "EditorCaption": ""
             }
           ]

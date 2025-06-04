@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
-function ProtectedRoutes() {
+function ProtectedEmployeeRoutes() {
   const [isLogged, setIsLogged] = useState(false);
   const [waiting, setWaiting] = useState(true);
 
   useEffect(() => {
+    // Check the 'role' from localStorage to determine if the user is an employee
     const role = localStorage.getItem("role");
-    if (role === "customer") {
+    if (role === "employee") {
       setIsLogged(true);
     } else {
       setIsLogged(false);
@@ -23,7 +24,8 @@ function ProtectedRoutes() {
     );
   }
 
-  return isLogged ? <Outlet /> : <Navigate to="/login" replace />;
+  // Only allow access to employee-protected routes if the role is 'employee'
+  return isLogged ? <Outlet /> : <Navigate to="/employee-login" replace />;
 }
 
-export default ProtectedRoutes;
+export default ProtectedEmployeeRoutes;

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using System.Text.Json;
 
 namespace APDS7311_POE_PART2_ST10076452.Server.Controllers
 {
@@ -14,148 +13,119 @@ namespace APDS7311_POE_PART2_ST10076452.Server.Controllers
     [ApiController]
     public class SecureWebsiteController : ControllerBase
     {
-        private readonly SignInManager<Users> _signInManager;
-        private readonly UserManager<Users> _userManager;
         private readonly ApplicationDbContext _context;
+        private readonly PasswordHasher<Users> _passwordHasher;
 
-        public SecureWebsiteController(SignInManager<Users> signInManager, UserManager<Users> userManager, ApplicationDbContext context)
+        public SecureWebsiteController(ApplicationDbContext context)
         {
-            _signInManager = signInManager;
-            _userManager = userManager;
             _context = context;
+            _passwordHasher = new PasswordHasher<Users>();
         }
 
-        // Register User
         [HttpPost("register")]
-        public async Task<ActionResult> RegisterUser()
+        public async Task<ActionResult> RegisterUser([FromBody] RegisterUserDto dto)
         {
-            string message = "";
-            IdentityResult result;
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    message = "Invalid input.",
+                    errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)
+                });
+            }
 
             try
             {
-                using var reader = new StreamReader(Request.Body);
-                var body = await reader.ReadToEndAsync();
-
-                var json = JsonDocument.Parse(body).RootElement;
+                if (await _context.Users.AnyAsync(u => u.accNumber == dto.AccNumber))
+                    return BadRequest(new { message = "Account number already registered." });
 
                 var newUser = new Users
                 {
-                    fullName = json.GetProperty("fullName").GetString(),
-                    accNumber = json.GetProperty("accNumber").GetString(),
-                    idNumber = json.GetProperty("idNumber").GetInt32(),
-                    UserName = json.GetProperty("accNumber").GetString()  // UserName is set to accNumber
+                    fullName = dto.FullName,
+                    accNumber = dto.AccNumber,
+                    idNumber = dto.IdNumber
                 };
 
-                var password = json.GetProperty("Password").GetString(); // Corrected to "Password"
+                newUser.Password = _passwordHasher.HashPassword(newUser, dto.Password);
 
-                // Create the new user in the Identity system
-                result = await _userManager.CreateAsync(newUser, password);
+                _context.Users.Add(newUser);
+                await _context.SaveChangesAsync();
 
-                if (!result.Succeeded)
-                {
-                    return BadRequest(new
-                    {
-                        message = "Registration failed.",
-                        errors = result.Errors.Select(e => e.Description).ToList()
-                    });
-                }
-
-                message = "You're now registered!";
+                return Ok(new { message = "You're now registered!" });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = "There is a problem with registering. Please try again. " + ex.Message });
+                return BadRequest(new { message = "Registration error: " + ex.Message });
             }
-
-            return Ok(new { message });
         }
 
-        // Login User
         [HttpPost("login")]
-        public async Task<ActionResult> LoginUser()
+        public async Task<ActionResult> LoginUser([FromBody] LoginUserDto dto)
         {
-            string message = "";
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    message = "Invalid input.",
+                    errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)
+                });
+            }
 
             try
             {
-                // Read the login details from the request body
-                using var reader = new StreamReader(Request.Body);
-                var body = await reader.ReadToEndAsync();
-                var json = JsonDocument.Parse(body).RootElement;
-
-                var accNumber = json.GetProperty("accNumber").GetString();
-                var password = json.GetProperty("Password").GetString();
-
-                // Find the user by account number
-                var user = await _userManager.Users.FirstOrDefaultAsync(u => u.accNumber == accNumber);
-
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.accNumber == dto.AccNumber);
                 if (user == null)
-                    return Unauthorized("Account number or password is wrong, try again.");
+                    return Unauthorized(new { message = "Account number or password is incorrect." });
 
-                // Attempt to sign the user in
-                var result = await _signInManager.PasswordSignInAsync(user.UserName, password, false, false);
+                var result = _passwordHasher.VerifyHashedPassword(user, user.Password, dto.Password);
+                if (result == PasswordVerificationResult.Failed)
+                    return Unauthorized(new { message = "Account number or password is incorrect." });
 
-                if (!result.Succeeded)
-                    return Unauthorized("Account number or password is wrong, try again.");
-
-                message = "Welcome, your login was successful!";
+                return Ok(new { message = $"Welcome, {user.fullName}! Login successful.", accNumber = user.accNumber });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = "There is a problem with logging in. Please try again. " + ex.Message });
+                return BadRequest(new { message = "Login error: " + ex.Message });
             }
-
-            return Ok(new { message });
         }
 
-        // Logout User
-        [HttpGet("logout"), Authorize]
-        public async Task<ActionResult> LogoutUser()
+        [HttpPost("employee-login")]
+        public async Task<ActionResult> LoginEmployee([FromBody] LoginEmployeeDto dto)
         {
-            string message = "Have a good day, Goodbye!";
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    message = "Invalid input.",
+                    errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)
+                });
+            }
 
             try
             {
-                await _signInManager.SignOutAsync();
+                var employee = await _context.Employees.FirstOrDefaultAsync(e => e.EmployeeNumber == dto.EmployeeNumber);
+                if (employee == null)
+                    return Unauthorized(new { message = "Employee number or password is incorrect." });
+
+                var empHasher = new PasswordHasher<Employee>();
+                var result = empHasher.VerifyHashedPassword(employee, employee.Password, dto.Password);
+
+                if (result == PasswordVerificationResult.Failed)
+                    return Unauthorized(new { message = "Employee number or password is incorrect." });
+
+                return Ok(new
+                {
+                    message = $"Welcome, {employee.FullName}! Employee login successful.",
+                    employee.EmployeeNumber,
+                    employee.Role
+                });
             }
             catch (Exception ex)
             {
-                return BadRequest("Something has gone wrong. Please try again. " + ex.Message);
+                return BadRequest(new { message = "Login error: " + ex.Message });
             }
-
-            return Ok(new { message });
         }
 
-        // Check User
-        [HttpGet("cookies"), Authorize]
-        public async Task<ActionResult> CheckUser()
-        {
-            string message = "Logged in";
-            Users currentUser = new();
-
-            try
-            {
-                var userPrincipal = HttpContext.User;
-
-                if (_signInManager.IsSignedIn(userPrincipal))
-                {
-                    currentUser = await _signInManager.UserManager.GetUserAsync(userPrincipal);
-                }
-                else
-                {
-                    return Forbid("Access Denied");
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest("Something went wrong, please try again. " + ex.Message);
-            }
-
-            return Ok(new { message, user = currentUser });
-        }
-
-        // Make Payment
         [HttpPost("makepayment"), Authorize]
         public async Task<ActionResult> MakePayment([FromBody] PaymentRequest request)
         {
@@ -173,7 +143,7 @@ namespace APDS7311_POE_PART2_ST10076452.Server.Controllers
                     return Unauthorized(new { message = "User not authenticated." });
                 }
 
-                request.UserId = userId;
+                request.accNumber = userId;
                 request.DateCreated = DateTime.UtcNow;
 
                 _context.PaymentRequests.Add(request);
@@ -191,5 +161,80 @@ namespace APDS7311_POE_PART2_ST10076452.Server.Controllers
                 return StatusCode(500, new { message = "Payment processing failed. " + ex.Message });
             }
         }
+
+        [HttpGet("checkuser"), Authorize]
+        public async Task<ActionResult> CheckUser()
+        {
+            try
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId == null)
+                    return Unauthorized(new { message = "User not authenticated." });
+
+                var user = await _context.Users.FindAsync(userId);
+                if (user == null)
+                    return NotFound(new { message = "User not found." });
+
+                return Ok(new { message = "User is logged in.", user });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Error checking user: " + ex.Message });
+            }
+        }
+
+        [HttpGet("logout"), Authorize]
+        public ActionResult LogoutUser()
+        {
+            return Ok(new { message = "Logged out successfully." });
+        }
+
+        [HttpGet("employee/{employeeNumber}")]
+        public async Task<ActionResult> GetEmployeeByNumber(string employeeNumber)
+        {
+            try
+            {
+                var employee = await _context.Employees
+                    .Where(e => e.EmployeeNumber == employeeNumber)
+                    .Select(e => new
+                    {
+                        e.EmployeeNumber,
+                        e.FullName,
+                        e.Email,
+                        e.Role,
+                        e.CreatedAt
+                    })
+                    .FirstOrDefaultAsync();
+
+                if (employee == null)
+                    return NotFound(new { message = "Employee not found." });
+
+                return Ok(employee);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error fetching employee: " + ex.Message });
+            }
+        }
+    }
+
+    public class RegisterUserDto
+    {
+        public string FullName { get; set; }
+        public string AccNumber { get; set; }
+        public string Password { get; set; }
+        public int IdNumber { get; set; }
+    }
+
+    public class LoginUserDto
+    {
+        public string AccNumber { get; set; }
+        public string Password { get; set; }
+    }
+
+    public class LoginEmployeeDto
+    {
+        public string EmployeeNumber { get; set; }
+        public string Password { get; set; }
     }
 }
